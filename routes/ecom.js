@@ -1,45 +1,79 @@
+// 
+
 var db = require("mongoose");
 var Shop = db.model("Shop");
+var Product = db.model("Product");
+var Order = db.model("Order");
+var Lineitem = db.model("Lineitem");
 
-// Shopオブジェクトの作成
-new Shop({
-    _id: 1,
-    name: "yahoo",
-    email: "aaa@example.com",
-    phone: 1234567890,
-}).save(function (err, shop) {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log("yay");
-        console.log(shop);
+// create document
+var onlineShop = new Shop({
+    name: "Online Shop",
+    shop_id: 1,
+    contact: {
+        email: "aaa@example.com",
+        phone: 1234567890
     }
 });
+// save document
+onlineShop.save(function (err) {
+    if (err) throw err;
+});
 
-// ショップ検索
-Shop.find()
-    .exec()
-    .then(function (shops) {
-        console.log("wow");
-        console.log(shops);
-    })
-    .catch(function (err) {
-        console.log(err);
-    });
+// create document
+var milk = new Product({
+    name: "Milk",
+    shop_id: 1,
+    product_id: "A01",
+    price: 4,
+    description: "a carton of milk"
+});
+// save document
+milk.save(function (err) {
+    if (err) throw err;
+});
 
-// 動的API
+// create document
+var first_order = new Order({
+    order_number: 1,
+    shop_id: 1,
+    total_amount_due: 16,
+    order_date: new Date(),
+});
+// save document
+first_order.save(function (err) {
+    if (err) throw err;
+});
 
-// Expressのインポート
+// create document
+var order_item = new Lineitem({
+    lineitem_id: 1,
+    order_number: 1,
+    product_id: 1,
+    lineitem_price: 4,
+    lineitem_qty: 4,
+});
+// save document
+order_item.save(function (err) {
+    if (err) throw err;
+});
+
+
+
+// import Express
 var express = require("express");
 var router = express.Router();
 
-// Getリクエスト時のアクション
+// Action for GET method
 router.get("/", function (req, res, next) {
-    Shop.find()
+
+
+
+    Product.find()
         .exec()
-        .then(function (shops) {
+        .then(function (products) {
             res.json({
-                shops: shops
+                products: products,
             });
         })
         .catch(function (err) {
@@ -47,6 +81,19 @@ router.get("/", function (req, res, next) {
                 err: err
             });
         });
+    // Shop.find()
+    //     .exec()
+    //     .then(function (shops) {
+    //         res.json({
+    //             shops: shops,
+    //         });
+    //     })
+    //     .catch(function (err) {
+    //         res.status(500).json({
+    //             err: err
+    //         });
+    //     });
+
 });
 
 module.exports = router;

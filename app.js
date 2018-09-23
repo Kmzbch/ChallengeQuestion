@@ -1,4 +1,3 @@
-// 
 require('./db/mongo');
 
 var createError = require('http-errors');
@@ -8,8 +7,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // router
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var ecomRouter = require('./routes/ecom');
 
 var app = express();
@@ -27,8 +24,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // ルートパスとrouterを紐づけ
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/ecom', ecomRouter);
 
 // catch 404 and forward to error handler
