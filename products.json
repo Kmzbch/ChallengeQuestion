@@ -1,0 +1,11 @@
+{
+    "_id": {
+        "$oid": "5ba70519496b2a10d2194569"
+    },
+    "name": "Milk",
+    "shop_id": 1,
+    "product_id": "A01",
+    "price": 4,
+    "description": "a carton of milk",
+    "__v": 0
+}

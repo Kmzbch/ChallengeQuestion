@@ -1,5 +1,3 @@
-// 
-
 var db = require("mongoose");
 var Shop = db.model("Shop");
 var Product = db.model("Product");

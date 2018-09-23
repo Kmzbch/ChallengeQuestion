@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-// Shop info
+// Shop table
 var Shop = new Schema({
   name: String,
   shop_id: Number,
@@ -11,8 +11,7 @@ var Shop = new Schema({
     phone: Number
   }
 });
-
-// Product info
+// Product table
 var Product = new Schema({
   name: String,
   product_id: String,
@@ -20,14 +19,14 @@ var Product = new Schema({
   price: Number,
   description: String,
 });
-// Order info
+// Order table
 var Order = new Schema({
   order_number: Number,
   shop_id: Number,
   total_amount_due: Number,
   order_date: Date,
 });
-// Lineitem info
+// Lineitem table
 var Lineitem = new Schema({
   lineitem_id: Number,
   order_number: Number,

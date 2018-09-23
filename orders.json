@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5ba70519496b2a10d219456a"},"order_number":1,"shop_id":1,"total_amount_due":16,"order_date":{"$date":"2018-09-23T03:14:33.083Z"},"__v":0}
+{"_id":{"$oid":"5ba7064751394310f6f020e7"},"order_number":1,"shop_id":1,"total_amount_due":16,"order_date":{"$date":"2018-09-23T03:19:35.052Z"},"__v":0}

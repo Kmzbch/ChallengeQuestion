@@ -1,0 +1,12 @@
+{
+    "_id": {
+        "$oid": "5ba70519496b2a10d2194568"
+    },
+    "contact": {
+        "email": "aaa@example.com",
+        "phone": 1234567890
+    },
+    "name": "Online Shop",
+    "shop_id": 1,
+    "__v": 0
+}

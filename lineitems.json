@@ -1,0 +1,11 @@
+{
+    "_id": {
+        "$oid": "5ba70519496b2a10d219456b"
+    },
+    "lineitem_id": 1,
+    "order_number": 1,
+    "product_id": 1,
+    "lineitem_price": 4,
+    "lineitem_qty": 4,
+    "__v": 0
+}
