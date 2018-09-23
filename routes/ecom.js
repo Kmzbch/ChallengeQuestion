@@ -1,7 +1,7 @@
 var db = require("mongoose");
 var Shop = db.model("Shop");
 
-// Recipeオブジェクトの作成
+// Shopオブジェクトの作成
 new Shop({
     _id: 1,
     name: "yahoo",
@@ -12,11 +12,11 @@ new Shop({
         console.log(err);
     } else {
         console.log("yay");
-        console.log(recipe);
+        console.log(shop);
     }
 });
 
-// レシピ検索
+// ショップ検索
 Shop.find()
     .exec()
     .then(function (shops) {
